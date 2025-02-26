@@ -1,8 +1,12 @@
 
+
 import java.awt.Color;
 import internalPages.*;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import admin.AdminDashboard;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -97,7 +101,12 @@ public class dashboard extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("USER PAGE");
+        jLabel2.setText("ADMIN DB");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         userpane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 180, 28));
 
         narvar.add(userpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 180, 50));
@@ -221,19 +230,6 @@ public class dashboard extends javax.swing.JFrame {
         recordpane.setBackground(body);
     }//GEN-LAST:event_recordpaneMouseEntered
 
-    private void userpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseExited
-        userpane.setBackground(narv);
-    }//GEN-LAST:event_userpaneMouseExited
-
-    private void userpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseEntered
-        userpane.setBackground(body);
-    }//GEN-LAST:event_userpaneMouseEntered
-
-    private void userpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseClicked
-        userPage up = new userPage();
-        maindesktop.add(up).setVisible(true);
-    }//GEN-LAST:event_userpaneMouseClicked
-
     private void dashpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseExited
         dashpane.setBackground(narv);
     }//GEN-LAST:event_dashpaneMouseExited
@@ -257,6 +253,24 @@ public class dashboard extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_exitMouseClicked
+
+    private void userpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseExited
+        userpane.setBackground(narv);
+    }//GEN-LAST:event_userpaneMouseExited
+
+    private void userpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseEntered
+        userpane.setBackground(body);
+    }//GEN-LAST:event_userpaneMouseEntered
+
+    private void userpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseClicked
+        
+    }//GEN-LAST:event_userpaneMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+      AdminDashboard adb = new AdminDashboard();
+      adb.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package internalPages;
+
 
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -203,7 +203,7 @@ public class dashboardPage extends javax.swing.JInternalFrame {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(570, 0, 110, 160);
+        jPanel3.setBounds(570, 0, 110, 0);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
         jLabel1.setText("PET ADOPTION SYSTEM");

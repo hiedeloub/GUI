@@ -2,6 +2,8 @@
 import config.dbConnector;
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -27,6 +29,36 @@ public class REGISTRATIONF extends javax.swing.JFrame {
     public REGISTRATIONF() {
         initComponents();
     }
+    public static String email, usern;
+     public boolean duplicateCheack(){
+         dbConnector dbc = new dbConnector();
+         try{
+             String query = "SELECT * FROM tbl_user WHERE u_email = '"+em.getText()+"' OR u_user = '"+usrn.getText()+"'";
+            ResultSet resultSet = dbc.getData(query);
+            
+           if(resultSet.next()){
+               
+               email = resultSet.getString("u_email");
+               System.out.println(""+email);
+               if(email.equals(em.getText())){
+                   JOptionPane.showMessageDialog(null,"Email is Already Used!"); 
+                   em.setText("");
+               }
+               usern = resultSet.getString("u_user");
+               System.out.println(""+usern);
+               if(usern.equals(usrn.getText())){
+                   JOptionPane.showMessageDialog(null,"User is Already Used!"); 
+                   usrn.setText("");
+               }
+               return true;
+           }else{
+               return false;
+           }
+        }catch (SQLException ex){
+            System.out.println(""+ex);
+            return false; 
+         }
+     }
     
     Color hover=new Color(0,102,102);
     Color defbutton=new Color(0,102,102);
@@ -71,13 +103,13 @@ public class REGISTRATIONF extends javax.swing.JFrame {
         CANSS = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         em = new javax.swing.JTextField();
-        passw = new javax.swing.JPasswordField();
         fn = new javax.swing.JLabel();
         emel = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         pass = new javax.swing.JLabel();
-        pass1 = new javax.swing.JLabel();
+        type = new javax.swing.JLabel();
         utype = new javax.swing.JComboBox<>();
+        passw = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -209,9 +241,6 @@ public class REGISTRATIONF extends javax.swing.JFrame {
         em.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel3.add(em, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 200, 30));
 
-        passw.setToolTipText("");
-        jPanel3.add(passw, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 200, 30));
-
         fn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         fn.setForeground(new java.awt.Color(255, 255, 255));
         fn.setText("Full Name:");
@@ -232,13 +261,17 @@ public class REGISTRATIONF extends javax.swing.JFrame {
         pass.setText("Password:");
         jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 120, 30));
 
-        pass1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        pass1.setForeground(new java.awt.Color(255, 255, 255));
-        pass1.setText("Account Type:");
-        jPanel3.add(pass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 120, 30));
+        type.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        type.setForeground(new java.awt.Color(255, 255, 255));
+        type.setText("Account Type:");
+        jPanel3.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 120, 30));
 
         utype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "User", " " }));
         jPanel3.add(utype, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 200, 30));
+
+        passw.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        passw.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel3.add(passw, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 200, 30));
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(310, 0, 450, 480);
@@ -255,6 +288,7 @@ public class REGISTRATIONF extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitsMouseClicked
@@ -288,14 +322,27 @@ public class REGISTRATIONF extends javax.swing.JFrame {
     }//GEN-LAST:event_REGSMouseEntered
 
     private void REGSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_REGSMouseClicked
-
- 
-       JOptionPane.showMessageDialog(null,"Registration Success"); 
-        LOGIN lf=new LOGIN();
-        lf.setVisible(true);
-        this.dispose();
-        
-             
+       if(FN.getText().isEmpty()||em.getText().isEmpty()||usrn.getText().isEmpty()||passw.getText().isEmpty() ){
+        JOptionPane.showMessageDialog(null,"All Fields are Required"); 
+       }else{if(passw.getText().length() < 8){
+         JOptionPane.showMessageDialog(null,"Password character should be 8 above");
+         passw.setText("");
+     }else if(duplicateCheack()){
+             System.out.println("Duplicate Exist");
+       }else{
+        dbConnector dbc = new dbConnector();
+        if(dbc.insertData("INSERT INTO tbl_user (u_name, u_email, u_user, u_password, u_type, u_status)"
+                + "VALUES('"+FN.getText()+"', '"+em.getText()+"', '"+usrn.getText()+"', '"+passw.getText()+"', '"+utype.getSelectedItem()+"', 'Pending')"))
+        {
+           JOptionPane.showMessageDialog(null,"Inserted Success!"); 
+             LOGIN lf=new LOGIN();
+             lf.setVisible(true);
+             this.dispose();
+        }else{
+          JOptionPane.showMessageDialog(null,"Registration Error"); 
+        }  
+       }
+       }
     }//GEN-LAST:event_REGSMouseClicked
 
     /**
@@ -353,8 +400,8 @@ public class REGISTRATIONF extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel pass;
-    private javax.swing.JLabel pass1;
-    private javax.swing.JPasswordField passw;
+    private javax.swing.JTextField passw;
+    private javax.swing.JLabel type;
     private javax.swing.JLabel user;
     private javax.swing.JTextField usrn;
     private javax.swing.JComboBox<String> utype;
