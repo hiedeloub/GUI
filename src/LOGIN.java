@@ -1,4 +1,7 @@
 
+import admin.userPage;
+import admin.AdminDashboard;
+import config.Session;
 import config.dbConnector;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -7,11 +10,17 @@ import java.sql.SQLException;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+<<<<<<< HEAD
+import java.lang.String;
+import javax.swing.JOptionPane;
+
+=======
 import static jdk.nashorn.internal.parser.TokenType.IF;
 import java.lang.String;
 import javax.swing.JOptionPane;
 import admin.AdminDashboard;
 import admin.userPage;
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -34,14 +43,32 @@ public class LOGIN extends javax.swing.JFrame {
     
     static String type="";
     static String status= "";
+<<<<<<< HEAD
+    public static boolean LOGIN(String usern, String password){
+=======
     public static boolean loginAcc(String usern, String password){
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         dbConnector connector = new dbConnector();
         try{
             String query = "SELECT * FROM tbl_user WHERE u_user = "+usern+" AND u_password = "+password+"";
             ResultSet resultSet = connector.getData(query);
            if(resultSet.next()){
+<<<<<<< HEAD
+               Session ses = Session.getInstance();
+            type=resultSet.getString("u_type");
+            status=resultSet.getString("status"); 
+            
+             Session sess=Session.getInstance();
+        sess.setUid(resultSet.getInt("u_id"));
+        sess.setName(resultSet.getString("u_name"));
+        sess.setEmail(resultSet.getString("u_email"));
+        sess.setType(resultSet.getString("u_type"));
+        sess.setStatus(resultSet.getString("u_status"));
+        
+=======
             type=resultSet.getString("u_type");
             status=resultSet.getString("status");       
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
             return true;
         }else{
             return false;      
@@ -50,10 +77,19 @@ public class LOGIN extends javax.swing.JFrame {
         }catch (SQLException ex){
             return false;
         }
+<<<<<<< HEAD
+    }
+        
+    void buttonDefaultColor(JPanel panel){
+        panel.setBackground(defbutton);
+        panel.setBorder(empty);
+    }
+=======
         
     
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
       
-}
+
         
     
    
@@ -68,17 +104,7 @@ public class LOGIN extends javax.swing.JFrame {
     
     Border empty=BorderFactory.createEmptyBorder();
     
-    void buttonBorderAnimation(JPanel panel){
-        panel.setBackground(hover);
-        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        panel.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(2.0f)));
-        
-    }
     
-    void buttonDefaultColor(JPanel panel){
-        panel.setBackground(defbutton);
-        panel.setBorder(empty);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -199,6 +225,10 @@ public class LOGIN extends javax.swing.JFrame {
         password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jPanel3.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 200, 40));
 
+<<<<<<< HEAD
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton1.setText("LOGIN");
+=======
         jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton1.setText("LOGIN");
@@ -207,12 +237,17 @@ public class LOGIN extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, 30));
+=======
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 70, 30));
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(310, 0, 450, 420);
@@ -251,6 +286,20 @@ public class LOGIN extends javax.swing.JFrame {
      this.dispose();
     }//GEN-LAST:event_loginfMouseClicked
 
+<<<<<<< HEAD
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (LOGIN(usern.getText(), password.getText())) {
+    } else {
+        
+        JOptionPane.showMessageDialog(null, "Login Successfully!");
+        if (type.equals("Admin")) {
+            AdminDashboard ad = new AdminDashboard();
+            ad.setVisible(true);
+            this.dispose();
+        } else if (type.equals("User")) {
+            userPage u = new userPage();
+            u.setVisible(true);
+=======
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
   
     }//GEN-LAST:event_jButton1MouseClicked
@@ -269,15 +318,22 @@ public class LOGIN extends javax.swing.JFrame {
         } else if (type.equals("User")) {
             userPage up = new userPage();
             up.setVisible(true);
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "No account type found, contact the Administrator.");
         }
+<<<<<<< HEAD
+     
+     }
+        
+=======
     }
 
         }
 
 
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

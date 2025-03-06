@@ -33,7 +33,11 @@ public class REGISTRATIONF extends javax.swing.JFrame {
      public boolean duplicateCheack(){
          dbConnector dbc = new dbConnector();
          try{
+<<<<<<< HEAD
+             String query = "SELECT * FROM tbl_user WHERE u_email = '"+em.getText()+ "'";
+=======
              String query = "SELECT * FROM tbl_user WHERE u_email = '"+em.getText()+"' OR u_user = '"+usrn.getText()+"'";
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
             ResultSet resultSet = dbc.getData(query);
             
            if(resultSet.next()){
@@ -343,6 +347,10 @@ public class REGISTRATIONF extends javax.swing.JFrame {
         }  
        }
        }
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     }//GEN-LAST:event_REGSMouseClicked
 
     /**

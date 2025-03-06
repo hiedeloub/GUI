@@ -47,6 +47,10 @@ public class dbConnector {
        return false;
 
     }
+<<<<<<< HEAD
+       
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 }
 
 }

@@ -1,12 +1,19 @@
 
 
+<<<<<<< HEAD
+import admin.AdminDashboard;
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 import java.awt.Color;
 import internalPages.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+<<<<<<< HEAD
+=======
 import admin.AdminDashboard;
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 
 /*
  * To change this license header, choose License Headers in Project Properties.

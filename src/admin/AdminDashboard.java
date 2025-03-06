@@ -1,10 +1,23 @@
+<<<<<<< HEAD
+package admin;
+
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
+
+
+
+
+import config.Session;
+=======
 package admin;
 
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 import java.awt.Color;
 import internalPages.*;
 import javax.swing.JFrame;
@@ -12,6 +25,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 /**
  *
  * @author Vilma Gaming
@@ -24,10 +41,30 @@ public class AdminDashboard extends javax.swing.JFrame {
     public AdminDashboard() {
         initComponents();
     }
+<<<<<<< HEAD
+        
+    /**
+     *
+     */
+    public static class LOGIN {
+
+        public LOGIN() {
+        }
+
+        private void setVisible(boolean b) {
+        }
+        }
+  
+    private static class dashboard { 
+         private void setVisible(boolean b) {
+             
+         }
+=======
     private static class dashboard {
         private void setVisible(boolean b) {
             
         }
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     }
 
     /**
@@ -42,7 +79,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         narvar = new javax.swing.JPanel();
         ADMIN = new javax.swing.JPanel();
+<<<<<<< HEAD
+        acc_name = new javax.swing.JLabel();
+=======
         jLabel10 = new javax.swing.JLabel();
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         jLabel11 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
@@ -54,6 +95,14 @@ public class AdminDashboard extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<<<<<<< HEAD
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(null);
@@ -75,11 +124,19 @@ public class AdminDashboard extends javax.swing.JFrame {
         });
         ADMIN.setLayout(null);
 
+<<<<<<< HEAD
+        acc_name.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        acc_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        acc_name.setText("ADMIN");
+        ADMIN.add(acc_name);
+        acc_name.setBounds(0, 150, 180, 40);
+=======
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("ADMIN");
         ADMIN.add(jLabel10);
         jLabel10.setBounds(0, 150, 180, 40);
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/admin.png"))); // NOI18N
@@ -120,6 +177,14 @@ public class AdminDashboard extends javax.swing.JFrame {
         adash.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         adash.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         adash.setText("ADMIN DASHBOARD");
+<<<<<<< HEAD
+        adash.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                adashVetoableChange(evt);
+            }
+        });
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         header.add(adash, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 420, 28));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -225,6 +290,26 @@ public class AdminDashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
 
+<<<<<<< HEAD
+    private void adashVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_adashVetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adashVetoableChange
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        Session sess = Session.getInstance();
+        
+     if(sess.getUid()== 0){
+      JOptionPane.showMessageDialog(null, "No account found, must login!");
+      LOGIN lf = new LOGIN();
+      lf.setVisible(true);
+      this.dispose();
+     }else{
+         acc_name.setText(""+sess.getName());
+    }
+    }//GEN-LAST:event_formWindowActivated
+
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     /**
      * @param args the command line arguments
      */
@@ -262,11 +347,18 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ADMIN;
+<<<<<<< HEAD
+    private javax.swing.JLabel acc_name;
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     private javax.swing.JLabel adash;
     private javax.swing.JLabel exit;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
+=======
     private javax.swing.JLabel jLabel10;
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel6;
@@ -275,4 +367,11 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel narvar;
     private javax.swing.JLabel nn;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD
+
+   
+    }
+
+=======
 }
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e

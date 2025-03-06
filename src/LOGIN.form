@@ -274,21 +274,33 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
+<<<<<<< HEAD
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="12" style="1"/>
+=======
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Century Gothic" size="12" style="1"/>
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
                 </Property>
                 <Property name="text" type="java.lang.String" value="LOGIN"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
+=======
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
+                  <AbsoluteConstraints x="270" y="320" width="-1" height="30"/>
+=======
                   <AbsoluteConstraints x="270" y="320" width="70" height="30"/>
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
                 </Constraint>
               </Constraints>
             </Component>

@@ -1,3 +1,5 @@
+package admin;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,6 +7,9 @@
  */
 package admin;
 
+
+import admin.AdminDashboard;
+import config.Session;
 import config.dbConnector;
 import java.awt.Color;
 import java.awt.Component;
@@ -74,12 +79,27 @@ public class userPage extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         narvar = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+<<<<<<< HEAD
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        ID = new javax.swing.JLabel();
+        CU = new javax.swing.JLabel();
+=======
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         jScrollPane2 = new javax.swing.JScrollPane();
         user_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<<<<<<< HEAD
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -294,12 +314,15 @@ public class userPage extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(0, 102, 102));
         jPanel4.setLayout(null);
 
+<<<<<<< HEAD
+=======
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("USER");
         jPanel4.add(jLabel6);
         jLabel6.setBounds(0, 100, 130, 40);
 
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGES/team (2).png"))); // NOI18N
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -310,8 +333,29 @@ public class userPage extends javax.swing.JFrame {
         jPanel4.add(jLabel12);
         jLabel12.setBounds(0, 0, 130, 140);
 
+<<<<<<< HEAD
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("USER");
+        jPanel4.add(jLabel13);
+        jLabel13.setBounds(0, 100, 130, 40);
+
         narvar.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, 150));
 
+        ID.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        ID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ID.setText("ID");
+        narvar.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 170, 30));
+
+        CU.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        CU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CU.setText("Current User");
+        narvar.add(CU, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 170, 30));
+
+=======
+        narvar.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, 150));
+
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
         jPanel1.add(narvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 390));
 
         user_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -405,6 +449,14 @@ public class userPage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel12MouseClicked
 
+<<<<<<< HEAD
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+       Session sess = Session.getInstance();
+        ID.setText(""+sess.getUid());
+    }//GEN-LAST:event_formWindowActivated
+
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     /**
      * @param args the command line arguments
      */
@@ -442,13 +494,19 @@ public class userPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ADD;
+    private javax.swing.JLabel CU;
     private javax.swing.JPanel DLT;
     private javax.swing.JPanel EDIT;
+    private javax.swing.JLabel ID;
     private javax.swing.JPanel REF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+<<<<<<< HEAD
+    private javax.swing.JLabel jLabel13;
+=======
+>>>>>>> 61408eb2a7ae18f8add68beba58a1de6f30bf05e
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
